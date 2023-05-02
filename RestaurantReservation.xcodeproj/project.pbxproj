@@ -9,21 +9,29 @@
 /* Begin PBXBuildFile section */
 		988CED602A00B075007CB9E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988CED5F2A00B075007CB9E8 /* AppDelegate.swift */; };
 		988CED622A00B075007CB9E8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988CED612A00B075007CB9E8 /* SceneDelegate.swift */; };
-		988CED642A00B075007CB9E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988CED632A00B075007CB9E8 /* ViewController.swift */; };
+		988CED642A00B075007CB9E8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988CED632A00B075007CB9E8 /* LoginViewController.swift */; };
 		988CED672A00B075007CB9E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 988CED652A00B075007CB9E8 /* Main.storyboard */; };
 		988CED692A00B076007CB9E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 988CED682A00B076007CB9E8 /* Assets.xcassets */; };
 		988CED6C2A00B076007CB9E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 988CED6A2A00B076007CB9E8 /* LaunchScreen.storyboard */; };
+		988CED742A00B4F4007CB9E8 /* RestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988CED732A00B4F4007CB9E8 /* RestaurantViewController.swift */; };
+		988CED762A00B604007CB9E8 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988CED752A00B604007CB9E8 /* RegisterViewController.swift */; };
+		988CED782A00B687007CB9E8 /* ReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988CED772A00B687007CB9E8 /* ReservationViewController.swift */; };
+		988CED7A2A00B6EB007CB9E8 /* ConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988CED792A00B6EB007CB9E8 /* ConfirmationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		988CED5C2A00B075007CB9E8 /* RestaurantReservation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RestaurantReservation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		988CED5F2A00B075007CB9E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		988CED612A00B075007CB9E8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		988CED632A00B075007CB9E8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		988CED632A00B075007CB9E8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		988CED662A00B075007CB9E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		988CED682A00B076007CB9E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		988CED6B2A00B076007CB9E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		988CED6D2A00B076007CB9E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		988CED732A00B4F4007CB9E8 /* RestaurantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantViewController.swift; sourceTree = "<group>"; };
+		988CED752A00B604007CB9E8 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		988CED772A00B687007CB9E8 /* ReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewController.swift; sourceTree = "<group>"; };
+		988CED792A00B6EB007CB9E8 /* ConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,13 +64,17 @@
 		988CED5E2A00B075007CB9E8 /* RestaurantReservation */ = {
 			isa = PBXGroup;
 			children = (
+				988CED732A00B4F4007CB9E8 /* RestaurantViewController.swift */,
 				988CED5F2A00B075007CB9E8 /* AppDelegate.swift */,
 				988CED612A00B075007CB9E8 /* SceneDelegate.swift */,
-				988CED632A00B075007CB9E8 /* ViewController.swift */,
+				988CED632A00B075007CB9E8 /* LoginViewController.swift */,
 				988CED652A00B075007CB9E8 /* Main.storyboard */,
 				988CED682A00B076007CB9E8 /* Assets.xcassets */,
 				988CED6A2A00B076007CB9E8 /* LaunchScreen.storyboard */,
 				988CED6D2A00B076007CB9E8 /* Info.plist */,
+				988CED752A00B604007CB9E8 /* RegisterViewController.swift */,
+				988CED772A00B687007CB9E8 /* ReservationViewController.swift */,
+				988CED792A00B6EB007CB9E8 /* ConfirmationViewController.swift */,
 			);
 			path = RestaurantReservation;
 			sourceTree = "<group>";
@@ -138,9 +150,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				988CED642A00B075007CB9E8 /* ViewController.swift in Sources */,
+				988CED7A2A00B6EB007CB9E8 /* ConfirmationViewController.swift in Sources */,
+				988CED642A00B075007CB9E8 /* LoginViewController.swift in Sources */,
+				988CED762A00B604007CB9E8 /* RegisterViewController.swift in Sources */,
+				988CED742A00B4F4007CB9E8 /* RestaurantViewController.swift in Sources */,
 				988CED602A00B075007CB9E8 /* AppDelegate.swift in Sources */,
 				988CED622A00B075007CB9E8 /* SceneDelegate.swift in Sources */,
+				988CED782A00B687007CB9E8 /* ReservationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
