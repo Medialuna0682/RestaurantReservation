@@ -18,6 +18,7 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
         // Hide back button
         self.navigationItem.hidesBackButton = true
+        print(UserDefaults.standard.dictionary(forKey: "Users"))
     }
 
     @IBAction func loginTapped(_ sender: Any) {
@@ -30,17 +31,18 @@ class LoginViewController: UIViewController {
         let password = self.passwordTextField.text!;
         var records = UserDefaults.standard.dictionary(forKey: "Users");
         if records == nil {
-            UserDefaults.standard.set([String : User](), forKey: "Users")
+            UserDefaults.standard.set([String : Data](), forKey: "Users")
             records = UserDefaults.standard.dictionary(forKey: "Users");
         }
-        let user = records![email] as? User
+        let user = records![email] as? Data
         if user == nil {
             let alert =  UIAlertController(title: nil, message: "Email not exist", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default))
             self.present(alert, animated: true)
             return
         }
-        if user?.password != password {
+        var decoded = try? JSONDecoder().decode(User.self, from: user!)
+        if decoded?.password != password {
             let alert = UIAlertController(title: nil, message: "Wrong password", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default))
             self.present(alert, animated: true)

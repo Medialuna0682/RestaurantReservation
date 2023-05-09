@@ -9,8 +9,8 @@ import UIKit
 
 class RegisterViewController: UIViewController {
     
-    var debug = true
-    var userDict = [String: User]()
+    var debug = false
+    var userDict = [String : Data]()
 
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -22,7 +22,7 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.userDict = UserDefaults.standard.dictionary(forKey: "Users") as! [String:User]
+        self.userDict = UserDefaults.standard.dictionary(forKey: "Users") as! [String : Data]
     }
 
     @IBAction func registerTapped(_ sender: Any) {
@@ -55,10 +55,11 @@ class RegisterViewController: UIViewController {
             self.present(alert, animated: true)
             return
         }
-        var user = User(name: <#T##String#>, phoneNo: <#T##String#>, email: <#T##String#>, password: <#T##String#>)
-        self.userDict[email] = user
+        let user = User(name: name, phoneNo: phoneNo, email: email, password: pwd)
+        let encoded = try? JSONEncoder().encode(user)
+        self.userDict[email] = encoded
         UserDefaults.standard.set(self.userDict, forKey: "Users")
-        
+        self.navigationController?.pushViewController(dest, animated: true)
     }
     
 }

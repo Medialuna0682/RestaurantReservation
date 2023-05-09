@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Reservation {
+class Reservation : Codable {
     var user: User
     var restaurant: String
     var time: String
