@@ -8,14 +8,14 @@
 import Foundation
 
 class Reservation : Codable {
-    var user: User
+    var email: String
     var restaurant: String
     var time: String
     var numPeople: Int
     var comment: String
     
-    init(user: User, restaurant: String, time: String, numPeople: Int, comment: String) {
-        self.user = user
+    init(email: String, restaurant: String, time: String, numPeople: Int, comment: String) {
+        self.email = email
         self.restaurant = restaurant
         self.time = time
         self.numPeople = numPeople
