@@ -20,14 +20,19 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func loginTapped(_ sender: Any) {
-        var email = self.emailTextField.text!;
+        let email = self.emailTextField.text!;
         var password = self.passwordTextField.text!;
         var records = UserDefaults.standard.dictionary(forKey: "Users");
         if records == nil {
             UserDefaults.standard.set([String : User](), forKey: "Users")
+            records = UserDefaults.standard.dictionary(forKey: "Users");
         }
-        var user = records![email] as! User
-        
+        let user = records![email] as? User
+        if user == nil {
+            let alert =  UIAlertController(title: nil, message: "Email not exist", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            self.present(alert, animated: true)
+        }
     }
     
 }
