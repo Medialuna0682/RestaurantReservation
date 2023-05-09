@@ -14,7 +14,6 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     override func viewDidLoad() {
-        // 11111
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         // Hide back button
@@ -22,13 +21,13 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func loginTapped(_ sender: Any) {
+        let dest = self.storyboard?.instantiateViewController(withIdentifier: "RestaurantViewController") as! RestaurantViewController
         if debug {
-            let dest = self.storyboard?.instantiateViewController(withIdentifier: "RestaurantViewController") as! RestaurantViewController
             self.navigationController?.pushViewController(dest, animated: true)
             return
         }
         let email = self.emailTextField.text!;
-        var password = self.passwordTextField.text!;
+        let password = self.passwordTextField.text!;
         var records = UserDefaults.standard.dictionary(forKey: "Users");
         if records == nil {
             UserDefaults.standard.set([String : User](), forKey: "Users")
@@ -39,7 +38,16 @@ class LoginViewController: UIViewController {
             let alert =  UIAlertController(title: nil, message: "Email not exist", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default))
             self.present(alert, animated: true)
+            return
         }
+        if user?.password != password {
+            let alert = UIAlertController(title: nil, message: "Wrong password", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            self.present(alert, animated: true)
+            return
+        }
+        UserDefaults.standard.set(user, forKey: "CurrentUser")
+        self.navigationController?.pushViewController(dest, animated: true)
     }
     
 }
