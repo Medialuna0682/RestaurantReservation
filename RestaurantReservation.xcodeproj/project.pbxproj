@@ -19,6 +19,7 @@
 		988CED7A2A00B6EB007CB9E8 /* ConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988CED792A00B6EB007CB9E8 /* ConfirmationViewController.swift */; };
 		98EFB30C2A09F506009355FF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EFB30B2A09F506009355FF /* User.swift */; };
 		98EFB30E2A09F584009355FF /* Reservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EFB30D2A09F584009355FF /* Reservation.swift */; };
+		CE5A1AAD2A0A223200459EC3 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5A1AAC2A0A223200459EC3 /* Restaurant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		988CED792A00B6EB007CB9E8 /* ConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationViewController.swift; sourceTree = "<group>"; };
 		98EFB30B2A09F506009355FF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		98EFB30D2A09F584009355FF /* Reservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reservation.swift; sourceTree = "<group>"; };
+		CE5A1AAC2A0A223200459EC3 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 		988CED5E2A00B075007CB9E8 /* RestaurantReservation */ = {
 			isa = PBXGroup;
 			children = (
+				CE5A1AAC2A0A223200459EC3 /* Restaurant.swift */,
 				988CED732A00B4F4007CB9E8 /* RestaurantViewController.swift */,
 				988CED5F2A00B075007CB9E8 /* AppDelegate.swift */,
 				988CED612A00B075007CB9E8 /* SceneDelegate.swift */,
@@ -156,6 +159,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE5A1AAD2A0A223200459EC3 /* Restaurant.swift in Sources */,
 				988CED7A2A00B6EB007CB9E8 /* ConfirmationViewController.swift in Sources */,
 				988CED642A00B075007CB9E8 /* LoginViewController.swift in Sources */,
 				98EFB30E2A09F584009355FF /* Reservation.swift in Sources */,
