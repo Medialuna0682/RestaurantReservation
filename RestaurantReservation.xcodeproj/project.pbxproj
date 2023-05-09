@@ -17,6 +17,8 @@
 		988CED762A00B604007CB9E8 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988CED752A00B604007CB9E8 /* RegisterViewController.swift */; };
 		988CED782A00B687007CB9E8 /* ReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988CED772A00B687007CB9E8 /* ReservationViewController.swift */; };
 		988CED7A2A00B6EB007CB9E8 /* ConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988CED792A00B6EB007CB9E8 /* ConfirmationViewController.swift */; };
+		98EFB30C2A09F506009355FF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EFB30B2A09F506009355FF /* User.swift */; };
+		98EFB30E2A09F584009355FF /* Reservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EFB30D2A09F584009355FF /* Reservation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		988CED752A00B604007CB9E8 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		988CED772A00B687007CB9E8 /* ReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewController.swift; sourceTree = "<group>"; };
 		988CED792A00B6EB007CB9E8 /* ConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationViewController.swift; sourceTree = "<group>"; };
+		98EFB30B2A09F506009355FF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		98EFB30D2A09F584009355FF /* Reservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reservation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +79,8 @@
 				988CED752A00B604007CB9E8 /* RegisterViewController.swift */,
 				988CED772A00B687007CB9E8 /* ReservationViewController.swift */,
 				988CED792A00B6EB007CB9E8 /* ConfirmationViewController.swift */,
+				98EFB30B2A09F506009355FF /* User.swift */,
+				98EFB30D2A09F584009355FF /* Reservation.swift */,
 			);
 			path = RestaurantReservation;
 			sourceTree = "<group>";
@@ -152,8 +158,10 @@
 			files = (
 				988CED7A2A00B6EB007CB9E8 /* ConfirmationViewController.swift in Sources */,
 				988CED642A00B075007CB9E8 /* LoginViewController.swift in Sources */,
+				98EFB30E2A09F584009355FF /* Reservation.swift in Sources */,
 				988CED762A00B604007CB9E8 /* RegisterViewController.swift in Sources */,
 				988CED742A00B4F4007CB9E8 /* RestaurantViewController.swift in Sources */,
+				98EFB30C2A09F506009355FF /* User.swift in Sources */,
 				988CED602A00B075007CB9E8 /* AppDelegate.swift in Sources */,
 				988CED622A00B075007CB9E8 /* SceneDelegate.swift in Sources */,
 				988CED782A00B687007CB9E8 /* ReservationViewController.swift in Sources */,
