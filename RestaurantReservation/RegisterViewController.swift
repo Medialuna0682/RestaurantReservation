@@ -32,11 +32,11 @@ class RegisterViewController: UIViewController {
         }
         var blank = false
         var pwdSame = true
-        var name = self.nameTextField.text!
-        var email = self.emailTextField.text!
-        var phoneNo = self.phoneNoTextField.text!
-        var pwd = self.passwordTextField.text!
-        var confirmPwd = self.confirmPWTextField.text!
+        let name = self.nameTextField.text!
+        let email = self.emailTextField.text!
+        let phoneNo = self.phoneNoTextField.text!
+        let pwd = self.passwordTextField.text!
+        let confirmPwd = self.confirmPWTextField.text!
         if name.isEmpty || email.isEmpty || phoneNo.isEmpty || pwd.isEmpty || confirmPwd.isEmpty {
             blank = true
         }

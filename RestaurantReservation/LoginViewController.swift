@@ -18,7 +18,6 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
         // Hide back button
         self.navigationItem.hidesBackButton = true
-        print(UserDefaults.standard.dictionary(forKey: "Users"))
     }
 
     @IBAction func loginTapped(_ sender: Any) {
@@ -44,7 +43,7 @@ class LoginViewController: UIViewController {
             self.present(alert, animated: true)
             return
         }
-        var decoded = try? JSONDecoder().decode(User.self, from: user!)
+        let decoded = try? JSONDecoder().decode(User.self, from: user!)
         if decoded?.password != password {
             let alert = UIAlertController(title: nil, message: "Wrong password", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default))
@@ -52,6 +51,7 @@ class LoginViewController: UIViewController {
             return
         }
         UserDefaults.standard.set(user, forKey: "CurrentUser")
+        
         self.navigationController?.pushViewController(dest, animated: true)
     }
     
