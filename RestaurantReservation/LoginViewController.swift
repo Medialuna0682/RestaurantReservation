@@ -25,6 +25,9 @@ class LoginViewController: UIViewController {
         let dest = self.storyboard?.instantiateViewController(withIdentifier: "RestaurantViewController") as! RestaurantViewController
         if debug {
             self.navigationController?.pushViewController(dest, animated: true)
+            var u = User(name: "Test", phoneNo: "123", email: "test@test.com", password: "123")
+            var e = try? JSONEncoder().encode(u)
+            UserDefaults.standard.set(e, forKey: "CurrentUser")
             return
         }
         let email = self.emailTextField.text!;
