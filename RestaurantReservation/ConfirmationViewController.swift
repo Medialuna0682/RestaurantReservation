@@ -10,6 +10,7 @@ import UIKit
 
 class ConfirmationViewController: UIViewController {
     // 連接storyboard上的UI元素
+    @IBOutlet weak var customerNameLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var restaurantNameLabel: UILabel!
     @IBOutlet weak var homeButton: UIButton! // 新增：返回主頁按鈕
@@ -33,9 +34,7 @@ class ConfirmationViewController: UIViewController {
         if let reservation = reservation {
             restaurantNameLabel.text = reservation.restaurant
             timeLabel.text = reservation.time
-        } else {
-            restaurantNameLabel.text = "NIL"
-            timeLabel.text = "NIL"
+            customerNameLabel.text = reservation.name
         }
     }
     

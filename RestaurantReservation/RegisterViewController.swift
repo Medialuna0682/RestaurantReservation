@@ -57,9 +57,17 @@ class RegisterViewController: UIViewController {
         }
         let user = User(name: name, phoneNo: phoneNo, email: email, password: pwd)
         let encoded = try? JSONEncoder().encode(user)
+        if (self.userDict[email] != nil) {
+            let alert = UIAlertController(title: nil, message: "Email already registered", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            self.present(alert, animated: true)
+        }
         self.userDict[email] = encoded
         UserDefaults.standard.set(self.userDict, forKey: "Users")
+        let alert = UIAlertController(title: nil, message: "Registration complete!", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
         self.navigationController?.pushViewController(dest, animated: true)
+        self.present(alert, animated: true)
     }
     
 }

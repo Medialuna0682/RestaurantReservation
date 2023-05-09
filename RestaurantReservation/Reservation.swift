@@ -9,13 +9,15 @@ import Foundation
 
 class Reservation : Codable {
     var email: String
+    var name: String
     var restaurant: String
     var time: String
     var numPeople: Int
     var comment: String
     
-    init(email: String, restaurant: String, time: String, numPeople: Int, comment: String) {
+    init(email: String, name: String, restaurant: String, time: String, numPeople: Int, comment: String) {
         self.email = email
+        self.name = name
         self.restaurant = restaurant
         self.time = time
         self.numPeople = numPeople
