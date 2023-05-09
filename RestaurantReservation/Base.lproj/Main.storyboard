@@ -104,7 +104,7 @@
         <!--Restaurants-->
         <scene sceneID="2AT-N7-I4b">
             <objects>
-                <viewController id="OoQ-TO-MMD" customClass="RestaurantViewController" customModule="RestaurantReservation" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RestaurantViewController" id="OoQ-TO-MMD" customClass="RestaurantViewController" customModule="RestaurantReservation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1xM-uu-QUY">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="863"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -249,7 +249,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="z1H-Dh-PgR"/>
+        <segue reference="6Zm-4d-D0k"/>
         <segue reference="iv9-LW-VNu"/>
     </inferredMetricsTieBreakers>
     <resources>
