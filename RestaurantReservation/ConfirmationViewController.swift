@@ -13,6 +13,13 @@ class ConfirmationViewController: UIViewController {
     @IBOutlet weak var customerNameLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var restaurantNameLabel: UILabel!
+    
+    @IBOutlet weak var emailLabel: UILabel!
+    
+    @IBOutlet weak var seatsLabel: UILabel!
+    
+    @IBOutlet weak var commentLabel: UILabel!
+    
     @IBOutlet weak var homeButton: UIButton! // 新增：返回主頁按鈕
     
     // 創建一個可選的Reservation實例
@@ -31,10 +38,13 @@ class ConfirmationViewController: UIViewController {
         self.navigationItem.hidesBackButton = true
         
         // 如果reservation不為nil，則更新餐廳名稱和預訂時間的標籤
-        if let reservation = reservation {
-            restaurantNameLabel.text = reservation.restaurant
-            timeLabel.text = reservation.time
-            customerNameLabel.text = reservation.name
+        if let reservation = self.reservation {
+            self.restaurantNameLabel.text = reservation.restaurant
+            self.timeLabel.text = reservation.time
+            self.customerNameLabel.text = reservation.name
+            self.emailLabel.text = reservation.email
+            self.seatsLabel.text = String(reservation.numPeople)
+            self.commentLabel.text = reservation.comment
         }
     }
     

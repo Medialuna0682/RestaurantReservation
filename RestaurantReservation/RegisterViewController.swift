@@ -9,7 +9,7 @@ import UIKit
 
 class RegisterViewController: UIViewController {
     
-    var debug = false
+    var debug = true
     var userDict = [String : Data]()
 
     @IBOutlet weak var nameTextField: UITextField!
@@ -29,6 +29,7 @@ class RegisterViewController: UIViewController {
         let dest = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
         if debug {
             self.navigationController?.pushViewController(dest, animated: true)
+            return
         }
         var blank = false
         var pwdSame = true

@@ -8,6 +8,7 @@
 import UIKit
 
 class ReservationViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    var restaurant: String = "PLACEHOLDER"
     @IBOutlet weak var restanrantName: UILabel!
     @IBOutlet weak var commentForRestaurant: UITextField!
     @IBOutlet weak var dateTimePicker: UIDatePicker!
@@ -29,6 +30,7 @@ class ReservationViewController: UIViewController, UIPickerViewDelegate, UIPicke
             
             // Set datePicker mode to date and time
             dateTimePicker.datePickerMode = .dateAndTime
+            self.restanrantName.text = self.restaurant
             
             self.currentUser = try? JSONDecoder().decode(User.self, from: (UserDefaults.standard.object(forKey: "CurrentUser") as? Data)!)
         }

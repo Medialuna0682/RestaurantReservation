@@ -9,7 +9,7 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
-    var debug = false
+    var debug = true
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -24,8 +24,8 @@ class LoginViewController: UIViewController {
         let dest = self.storyboard?.instantiateViewController(withIdentifier: "RestaurantViewController") as! RestaurantViewController
         if debug {
             self.navigationController?.pushViewController(dest, animated: true)
-            var u = User(name: "Test", phoneNo: "123", email: "test@test.com", password: "123")
-            var e = try? JSONEncoder().encode(u)
+            let u = User(name: "Test", phoneNo: "123", email: "test@test.com", password: "123")
+            let e = try? JSONEncoder().encode(u)
             UserDefaults.standard.set(e, forKey: "CurrentUser")
             return
         }
