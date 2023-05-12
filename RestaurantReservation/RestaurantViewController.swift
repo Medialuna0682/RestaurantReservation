@@ -19,8 +19,6 @@ class RestaurantViewController: UIViewController, UITableViewDataSource, UITable
        
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.dataSource = self
-                tableView.delegate = self
         self.navigationItem.hidesBackButton = true
     }
     @objc func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
