@@ -9,7 +9,7 @@ import UIKit
 
 class RegisterViewController: UIViewController {
     
-    var debug = true
+    var debug = false
     var userDict = [String : Data]()
 
     @IBOutlet weak var nameTextField: UITextField!
@@ -29,15 +29,14 @@ class RegisterViewController: UIViewController {
         let dest = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
         if debug {
             self.navigationController?.pushViewController(dest, animated: true)
-            return
         }
         var blank = false
         var pwdSame = true
-        let name = self.nameTextField.text!
-        let email = self.emailTextField.text!
-        let phoneNo = self.phoneNoTextField.text!
-        let pwd = self.passwordTextField.text!
-        let confirmPwd = self.confirmPWTextField.text!
+        var name = self.nameTextField.text!
+        var email = self.emailTextField.text!
+        var phoneNo = self.phoneNoTextField.text!
+        var pwd = self.passwordTextField.text!
+        var confirmPwd = self.confirmPWTextField.text!
         if name.isEmpty || email.isEmpty || phoneNo.isEmpty || pwd.isEmpty || confirmPwd.isEmpty {
             blank = true
         }
@@ -58,17 +57,9 @@ class RegisterViewController: UIViewController {
         }
         let user = User(name: name, phoneNo: phoneNo, email: email, password: pwd)
         let encoded = try? JSONEncoder().encode(user)
-        if (self.userDict[email] != nil) {
-            let alert = UIAlertController(title: nil, message: "Email already registered", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default))
-            self.present(alert, animated: true)
-        }
         self.userDict[email] = encoded
         UserDefaults.standard.set(self.userDict, forKey: "Users")
-        let alert = UIAlertController(title: nil, message: "Registration complete!", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
         self.navigationController?.pushViewController(dest, animated: true)
-        self.present(alert, animated: true)
     }
     
 }

@@ -18,14 +18,15 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
         // Hide back button
         self.navigationItem.hidesBackButton = true
+        print(UserDefaults.standard.dictionary(forKey: "Users"))
     }
 
     @IBAction func loginTapped(_ sender: Any) {
         let dest = self.storyboard?.instantiateViewController(withIdentifier: "RestaurantViewController") as! RestaurantViewController
         if debug {
             self.navigationController?.pushViewController(dest, animated: true)
-            let u = User(name: "Test", phoneNo: "123", email: "test@test.com", password: "123")
-            let e = try? JSONEncoder().encode(u)
+            var u = User(name: "Test", phoneNo: "123", email: "test@test.com", password: "123")
+            var e = try? JSONEncoder().encode(u)
             UserDefaults.standard.set(e, forKey: "CurrentUser")
             return
         }
@@ -43,7 +44,7 @@ class LoginViewController: UIViewController {
             self.present(alert, animated: true)
             return
         }
-        let decoded = try? JSONDecoder().decode(User.self, from: user!)
+        var decoded = try? JSONDecoder().decode(User.self, from: user!)
         if decoded?.password != password {
             let alert = UIAlertController(title: nil, message: "Wrong password", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default))
@@ -51,7 +52,6 @@ class LoginViewController: UIViewController {
             return
         }
         UserDefaults.standard.set(user, forKey: "CurrentUser")
-        
         self.navigationController?.pushViewController(dest, animated: true)
     }
     
