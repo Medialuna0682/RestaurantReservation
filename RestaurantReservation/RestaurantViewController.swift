@@ -23,7 +23,7 @@ class RestaurantViewController: UIViewController, UITableViewDataSource, UITable
     }
     @objc func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             return restaurantList.count
-        }
+    }
         
     @objc(tableView:cellForRowAtIndexPath:) func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantCell", for: indexPath)
@@ -33,7 +33,18 @@ class RestaurantViewController: UIViewController, UITableViewDataSource, UITable
             cell.detailTextLabel?.text = "\(restaurant.location) - \(restaurant.cuisine) - \(restaurant.rating)"
             
             return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "RestaurantToReservation" {
+            // TODO
+            // PASS SELECTED RESTAURANT OBJECT TO RESERVATION PAGE
+            let dest = segue.destination as! ReservationViewController
+            // MODIFY THIS PART
+            // vvvvvvvvvvvvvvvv
+            dest.restaurant = Restaurant(name: "PLACEHOLDER NAME", location: "PLACEHOLDER LOC", rating: -1.0, cuisine: "PLACEHOLDER CUISINE")
         }
     }
+}
 
 
