@@ -55,7 +55,7 @@ class ReservationViewController: UIViewController, UIPickerViewDelegate, UIPicke
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ReservationToConfirmation" {
-            let reservation = Reservation(email: currentUser!.email, name: currentUser!.name, restaurant: self.restanrantName.text!, time: self.dateTimePicker.date.formatted(date: .complete, time: .complete), numPeople: seats[self.seatPickerView.selectedRow(inComponent: 0)], comment: self.commentForRestaurant.text!)
+            let reservation = Reservation(email: currentUser!.email, name: currentUser!.name, restaurant: self.restanrantName.text!, time: self.dateTimePicker.date.formatted(date: .abbreviated, time: .shortened), numPeople: seats[self.seatPickerView.selectedRow(inComponent: 0)], comment: self.commentForRestaurant.text!)
             self.currentUser!.reservations.append(reservation)
             let encoded = try? JSONEncoder().encode(self.currentUser!)
             UserDefaults.standard.set(encoded, forKey: "CurrentUser")
