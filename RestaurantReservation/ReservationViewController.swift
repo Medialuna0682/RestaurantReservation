@@ -15,6 +15,7 @@ class ReservationViewController: UIViewController, UIPickerViewDelegate, UIPicke
     @IBOutlet weak var seatPickerView: UIPickerView!
     
     var currentUser: User? = nil
+    var userDict = [String : Data]()
     
         let seats = Array(1...20)
         
@@ -35,6 +36,7 @@ class ReservationViewController: UIViewController, UIPickerViewDelegate, UIPicke
             }
             
             self.currentUser = try? JSONDecoder().decode(User.self, from: (UserDefaults.standard.object(forKey: "CurrentUser") as? Data)!)
+            self.userDict = UserDefaults.standard.dictionary(forKey: "Users") as! [String : Data]
         }
         
         // UIPickerViewDataSource
@@ -57,6 +59,8 @@ class ReservationViewController: UIViewController, UIPickerViewDelegate, UIPicke
             self.currentUser!.reservations.append(reservation)
             let encoded = try? JSONEncoder().encode(self.currentUser!)
             UserDefaults.standard.set(encoded, forKey: "CurrentUser")
+            self.userDict[self.currentUser!.email] = encoded
+            UserDefaults.standard.set(self.userDict, forKey: "Users")
             let dest = segue.destination as! ConfirmationViewController
             dest.reservation = reservation
         }

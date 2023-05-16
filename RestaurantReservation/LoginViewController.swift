@@ -9,7 +9,7 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
-    var debug = true
+    var debug = false
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -18,6 +18,7 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
         // Hide back button
         self.navigationItem.hidesBackButton = true
+        
     }
 
     @IBAction func loginTapped(_ sender: Any) {
@@ -35,6 +36,9 @@ class LoginViewController: UIViewController {
         if records == nil {
             UserDefaults.standard.set([String : Data](), forKey: "Users")
             records = UserDefaults.standard.dictionary(forKey: "Users");
+        }
+        for i in records! {
+            print(i)
         }
         let user = records![email] as? Data
         if user == nil {

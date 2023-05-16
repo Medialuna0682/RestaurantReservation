@@ -9,7 +9,7 @@ import UIKit
 
 class RegisterViewController: UIViewController {
     
-    var debug = true
+    var debug = false
     var userDict = [String : Data]()
 
     @IBOutlet weak var nameTextField: UITextField!
