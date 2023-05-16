@@ -10,11 +10,15 @@ import UIKit
 class RestaurantViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
+    
+    // Add this property to hold the selected restaurant
+    var selectedRestaurant: Restaurant?
+    
     let restaurantList = [
-           Restaurant(name: "餐厅一", location: "上海", rating: 4.5, cuisine: "川菜"),
-           Restaurant(name: "餐厅二", location: "北京", rating: 4.0, cuisine: "粤菜"),
-           Restaurant(name: "餐厅三", location: "广州", rating: 4.2, cuisine: "东北菜"),
-           Restaurant(name: "餐厅四", location: "深圳", rating: 3.8, cuisine: "湘菜"),
+           Restaurant(name: "Three Williams", location: "Surry Hill", rating: 4.5, cuisine: "Brunch"),
+           Restaurant(name: "Don Don", location: "Townhall", rating: 4.0, cuisine: "Korean restaurant"),
+           Restaurant(name: "Dopa", location: "Darling square", rating: 4.2, cuisine: "Japanese restaurant"),
+           Restaurant(name: "Spicy Joint", location: "Chinatown", rating: 3.9, cuisine: "Chinese restaurant"),
        ]
        
     override func viewDidLoad() {
@@ -35,16 +39,21 @@ class RestaurantViewController: UIViewController, UITableViewDataSource, UITable
             return cell
     }
     
+    // Add this method to handle row selection
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Store the selected restaurant when a row is selected
+        selectedRestaurant = restaurantList[indexPath.row]
+        
+        // Perform the segue
+        performSegue(withIdentifier: "RestaurantToReservation", sender: self)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "RestaurantToReservation" {
-            // TODO
-            // PASS SELECTED RESTAURANT OBJECT TO RESERVATION PAGE
             let dest = segue.destination as! ReservationViewController
-            // MODIFY THIS PART
-            // vvvvvvvvvvvvvvvv
-            dest.restaurant = Restaurant(name: "PLACEHOLDER NAME", location: "PLACEHOLDER LOC", rating: -1.0, cuisine: "PLACEHOLDER CUISINE")
+            
+            // Pass the selected restaurant to the destination view controller
+            dest.restaurant = selectedRestaurant
         }
     }
 }
-
-
