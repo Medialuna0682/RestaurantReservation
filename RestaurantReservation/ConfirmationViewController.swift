@@ -17,12 +17,16 @@ class ConfirmationViewController: UIViewController {
     @IBOutlet weak var commentLabel: UILabel!
     
     var reservation: Reservation? = nil
-
-    override func viewDidLoad() {
+    // Override viewDidLoad function of the ViewController lifecycle
+  override func viewDidLoad() {
         super.viewDidLoad()
+        // Hide the back button on the navigation bar
         self.navigationItem.hidesBackButton = true
+        // If there is a valid reservation object, update the UI elements with the reservation details
         if let reservation = self.reservation {
+            // Set the restaurant name label with the reservation's restaurant name
             self.restaurantNameLabel.text = reservation.restaurant
+            // Set the reservation time label with the reservation's time
             self.timeLabel.text = reservation.time
             self.customerNameLabel.text = reservation.name
             self.emailLabel.text = reservation.email
