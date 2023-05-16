@@ -6,5 +6,5 @@
 | ---- | --- | ----------------|
 | Tianqi Chen | 14376925 | Medialuna0682 |
 | Xinyi Zeng | 24674196 | zeraporo |
-| PH | PH | lukeni11 |
+| Ludi Ni | 24593891 | lukeni11 |
 | Wei Cao | 13138045 | vivicaow |
