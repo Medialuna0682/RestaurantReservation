@@ -5,6 +5,6 @@
 | Name | SID | Github Username |
 | ---- | --- | ----------------|
 | Tianqi Chen | 14376925 | Medialuna0682 |
-| PH | PH | zeraporo |
+| Xinyi Zeng | 24674196 | zeraporo |
 | PH | PH | lukeni11 |
 | PH | PH | vivicaow |
