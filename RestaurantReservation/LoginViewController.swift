@@ -37,9 +37,6 @@ class LoginViewController: UIViewController {
             UserDefaults.standard.set([String : Data](), forKey: "Users")
             records = UserDefaults.standard.dictionary(forKey: "Users");
         }
-        for i in records! {
-            print(i)
-        }
         let user = records![email] as? Data
         if user == nil {
             let alert =  UIAlertController(title: nil, message: "Email not exist", preferredStyle: .alert)
