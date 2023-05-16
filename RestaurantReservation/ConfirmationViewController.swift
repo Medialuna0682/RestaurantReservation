@@ -15,7 +15,7 @@ class ConfirmationViewController: UIViewController {
     @IBOutlet weak var seatsLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
-    
+    // Declare an optional Reservation object
     var reservation: Reservation? = nil
     // Override viewDidLoad function of the ViewController lifecycle
   override func viewDidLoad() {
