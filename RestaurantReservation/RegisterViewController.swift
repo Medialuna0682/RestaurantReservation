@@ -70,6 +70,5 @@ class RegisterViewController: UIViewController {
         self.navigationController?.pushViewController(dest, animated: true)
         self.present(alert, animated: true)
     }
-    
 }
 

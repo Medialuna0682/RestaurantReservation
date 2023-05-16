@@ -19,19 +19,20 @@ class ReservationListViewController: UIViewController, UITableViewDataSource, UI
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReservationCell", for: indexPath)
-        
         let reservation = self.reservationList[indexPath.row]
         cell.textLabel?.text = reservation.restaurant
         cell.detailTextLabel?.text = reservation.time
-        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        var selected = self.reservationList[indexPath.row]
         self.reservationList.remove(at: indexPath.row)
+        self.currentUser!.reservations.remove(at: indexPath.row)
+        let encoded = try? JSONEncoder().encode(self.currentUser!)
+        self.userDict[self.currentUser!.email] = encoded
+        UserDefaults.standard.set(encoded, forKey: "CurrentUser")
+        UserDefaults.standard.set(self.userDict, forKey: "Users")
         tableView.deleteRows(at: [indexPath], with: .automatic)
-        
     }
     
     override func viewDidLoad() {
