@@ -10,6 +10,7 @@ import UIKit
 class ReservationListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var currentUser: User?
+    var userDict = [String : Data]()
     var reservationList: [Reservation] = []
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -28,15 +29,22 @@ class ReservationListViewController: UIViewController, UITableViewDataSource, UI
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         var selected = self.reservationList[indexPath.row]
+        self.reservationList.remove(at: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: .automatic)
         
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.currentUser = try? JSONDecoder().decode(User.self, from: (UserDefaults.standard.object(forKey: "CurrentUser") as? Data)!)
-        self.reservationList = self.currentUser!.reservations
-        for r in self.reservationList {
-            print(r.restaurant + "|" + r.time)
+        if let data = UserDefaults.standard.object(forKey: "CurrentUser") as? Data {
+            self.currentUser = try? JSONDecoder().decode(User.self, from: data)
+            if let currentUser = self.currentUser {
+                self.reservationList = currentUser.reservations
+                for r in self.reservationList {
+                    print(r.restaurant + "|" + r.time)
+                }
+            }
         }
+        self.userDict = UserDefaults.standard.dictionary(forKey: "Users") as! [String : Data]
     }
 }
