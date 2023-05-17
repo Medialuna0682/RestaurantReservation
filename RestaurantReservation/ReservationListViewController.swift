@@ -26,13 +26,22 @@ class ReservationListViewController: UIViewController, UITableViewDataSource, UI
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.reservationList.remove(at: indexPath.row)
-        self.currentUser!.reservations.remove(at: indexPath.row)
-        let encoded = try? JSONEncoder().encode(self.currentUser!)
-        self.userDict[self.currentUser!.email] = encoded
-        UserDefaults.standard.set(encoded, forKey: "CurrentUser")
-        UserDefaults.standard.set(self.userDict, forKey: "Users")
-        tableView.deleteRows(at: [indexPath], with: .automatic)
+        let alertController = UIAlertController(title: "Delete Reservation", message: "Are you sure you want to delete this reservation?", preferredStyle: .alert)
+        let deleteAction = UIAlertAction(title: "Delete", style: .destructive) {
+            action in
+            self.reservationList.remove(at: indexPath.row)
+            self.currentUser!.reservations.remove(at: indexPath.row)
+            let encoded = try? JSONEncoder().encode(self.currentUser!)
+            self.userDict[self.currentUser!.email] = encoded
+            UserDefaults.standard.set(encoded, forKey: "CurrentUser")
+            UserDefaults.standard.set(self.userDict, forKey: "Users")
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+        alertController.addAction(deleteAction)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        alertController.addAction(cancelAction)
+        self.present(alertController, animated: true, completion: nil)
+        
     }
     
     override func viewDidLoad() {
